@@ -6,7 +6,7 @@ import { API_URL, API_KEY } from './variable.js';
 const getDiscoverMovies = async () => {
   if (document.getElementById('discover-list').innerHTML === '') {
     try {
-      const response = await axios.get(`${API_URL}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${getCurrentPage()}s&region=id`);
+      const response = await axios.get(`${API_URL}/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${getCurrentPage()}&region=id`);
       const movies = response.data.results;
       movies.forEach((movie) => {
         const movieCardElement = document.createElement('movie-card');
